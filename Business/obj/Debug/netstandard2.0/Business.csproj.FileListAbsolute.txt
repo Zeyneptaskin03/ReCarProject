@@ -1,0 +1,16 @@
+C:\Users\Zeynep\source\repos\ReCarProject\Business\bin\Debug\netstandard2.0\Business.deps.json
+C:\Users\Zeynep\source\repos\ReCarProject\Business\bin\Debug\netstandard2.0\Business.dll
+C:\Users\Zeynep\source\repos\ReCarProject\Business\bin\Debug\netstandard2.0\Business.pdb
+C:\Users\Zeynep\source\repos\ReCarProject\Business\bin\Debug\netstandard2.0\Core.dll
+C:\Users\Zeynep\source\repos\ReCarProject\Business\bin\Debug\netstandard2.0\DataAccess.dll
+C:\Users\Zeynep\source\repos\ReCarProject\Business\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\Zeynep\source\repos\ReCarProject\Business\bin\Debug\netstandard2.0\DataAccess.pdb
+C:\Users\Zeynep\source\repos\ReCarProject\Business\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\Zeynep\source\repos\ReCarProject\Business\bin\Debug\netstandard2.0\Core.pdb
+C:\Users\Zeynep\source\repos\ReCarProject\Business\obj\Debug\netstandard2.0\Business.csprojAssemblyReference.cache
+C:\Users\Zeynep\source\repos\ReCarProject\Business\obj\Debug\netstandard2.0\Business.AssemblyInfoInputs.cache
+C:\Users\Zeynep\source\repos\ReCarProject\Business\obj\Debug\netstandard2.0\Business.AssemblyInfo.cs
+C:\Users\Zeynep\source\repos\ReCarProject\Business\obj\Debug\netstandard2.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\Zeynep\source\repos\ReCarProject\Business\obj\Debug\netstandard2.0\Business.csproj.CopyComplete
+C:\Users\Zeynep\source\repos\ReCarProject\Business\obj\Debug\netstandard2.0\Business.dll
+C:\Users\Zeynep\source\repos\ReCarProject\Business\obj\Debug\netstandard2.0\Business.pdb
