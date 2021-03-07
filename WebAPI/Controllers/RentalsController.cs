@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Result;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -33,7 +34,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("delete")]
+        [HttpPost("delete")]
         public IActionResult Delete(Rental rental)
         {
             var result = _rentalService.Delete(rental);
@@ -55,14 +56,15 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("getall")]
-        public IActionResult GetAll(Rental rental)
+        [HttpGet("getall")]
+        public IActionResult GetAll()
         {
-            var result = _rentalService.GetAll();
+            IDataResult<List<Rental>> result = _rentalService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
             }
+
             return BadRequest(result);
         }
 
