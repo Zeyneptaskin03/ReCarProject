@@ -42,6 +42,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
             builder.RegisterType<EfUserDal>().As<IUserDal>().SingleInstance();
 
+            //CarImage
+            builder.RegisterType<CarImageManager>().As<ICarImageService>().SingleInstance();
+            builder.RegisterType<EfCarImageDal>().As<ICarImageDal>().SingleInstance();
             //bir metod burası apıdeki startupın tekrarı aynı işlevlisidir
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();

@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Result;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -16,36 +18,28 @@ namespace Business.Concrete
         {
             _brandDal = brandDal;
         } 
-        public IResult Add(Brand brand)
-        {
-            _brandDal.Add(brand);
-            return new SuccessResult(Messages.BrandAdded);
-           /* if (brand.BrandName.Length < 2)
-            {
-                return new ErrorResult(Messages.BrandNameInvalid);
-            }
-            _brandDal.Add(brand);
-            return new SuccessResult();*/
-           
-        }
 
-        public IResult Delete(Brand brand)
-        {
-            _brandDal.Delete(brand);
-            return new SuccessResult(Messages.BrandDeleted);
-            /* if (brand.BrandName.Length < 2)
-             {
-                 return new ErrorResult(Messages.BrandNameInvalid);
-             }
-             _brandDal.Delete(brand);
-             return new SuccessResult();*/
-        }
+        [ValidationAspect(typeof(BrandValidator))]
 
         public IDataResult<List<Brand>> GetAll()
         {
             return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(), Messages.BrandsListed);
         }
 
+        public IResult Add(Brand brand)
+        {
+            _brandDal.Add(brand);
+            return new SuccessResult(Messages.BrandAdded);
+         }
+
+
+        public IResult Delete(Brand brand)
+        {
+            _brandDal.Delete(brand);
+            return new SuccessResult(Messages.BrandDeleted);
+        }
+
+       
         public IDataResult<Brand> GetById(int brandId)
         {
             return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandId == brandId));
@@ -55,12 +49,6 @@ namespace Business.Concrete
         {
             _brandDal.Update(brand);
             return new SuccessResult(Messages.BrandUpdated);
-            /* if (brand.BrandName.Length < 2)
-             {
-                 return new ErrorResult(Messages.BrandNameInvalid);
-             }
-             _brandDal.Update(brand);
-             return new SuccessResult();*/
         }
     }
 }

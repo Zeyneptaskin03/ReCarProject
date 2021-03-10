@@ -11,7 +11,7 @@ namespace Core.Utilities.Interceptors
             {
                 var classAttributes = type.GetCustomAttributes<MethodInterceptionBaseAttribute>
                     (true).ToList();
-                var methodAttributes = type.GetMethod(method.Name)
+            var methodAttributes = type.GetMethod(method.Name)
                     .GetCustomAttributes<MethodInterceptionBaseAttribute>(true);
                 classAttributes.AddRange(methodAttributes);
                 // classAttributes.Add(new ExceptionLogAspect(typeof(FileLogger))); bütün logları çalıştır demek bizde loglamak yok siliyoruz.
@@ -20,5 +20,4 @@ namespace Core.Utilities.Interceptors
             }
         }
 
-    }
 }
