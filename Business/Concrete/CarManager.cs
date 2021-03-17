@@ -19,12 +19,12 @@ namespace Business.Concrete
     public class CarManager : ICarService
     {
         ICarDal _carDal;
-        IColorService _colorService;
+      
 
-            public CarManager(ICarDal carDal, IColorService colorService)
+            public CarManager(ICarDal carDal)
             {
             _carDal = carDal;
-            _colorService = colorService;
+           
             }
 
         [SecuredOperation("product.add, admin ")]
