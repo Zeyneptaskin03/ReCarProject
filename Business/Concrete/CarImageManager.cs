@@ -33,7 +33,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.AddedNot);
             }
-            carImage.Date = DateTime.Now;
+            carImage.CarImageDate = DateTime.Now;
             carImage.ImagePath = FileHelper.Add(file);
             _carImageDal.Add(carImage);
             return new SuccessResult(Messages.Added);
@@ -69,7 +69,7 @@ namespace Business.Concrete
             var updatedPath = _carImageDal.Get(c => c.Id == carImage.Id).ImagePath;
             var newPath = FileHelper.Update(updatedPath, file);
             carImage.ImagePath = newPath;
-            carImage.Date = DateTime.Now;
+            carImage.CarImageDate= DateTime.Now;
             _carImageDal.Update(carImage);
             return new SuccessResult(Messages.Updated);
         }
@@ -86,7 +86,7 @@ namespace Business.Concrete
 
             }
 
-            return new List<CarImage>() { new CarImage { Id = 0, CarId = carId, Date = DateTime.MinValue, ImagePath = path } };
+            return new List<CarImage>() { new CarImage { Id = 0, CarId = carId, CarImageDate = DateTime.MinValue, ImagePath = path } };
 
         }
         public IResult CheckCarImageLimitExceeded(int carId)

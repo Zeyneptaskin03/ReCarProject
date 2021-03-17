@@ -2,6 +2,7 @@
 using Core.Utilities.Result;
 using Entities.Concrete;
 using Entities.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -25,6 +26,10 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getall")]
+        //[Authorize(Roles = "Car.List")] //kişinin otantike olması, yani selinde istek tokını olmasıı yetrli  yanii sisteme giriş yapmış olması kafi
+
+
+
         public IActionResult GetAll()
         {
             IDataResult<List<Car>> result = _carService.GetAll();
